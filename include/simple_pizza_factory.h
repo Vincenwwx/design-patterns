@@ -1,3 +1,5 @@
+#pragma once
+
 #include "pizza.h"
 
 #include <memory>
