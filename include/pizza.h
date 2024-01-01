@@ -1,5 +1,6 @@
 #include <string>
 
+namespace fact {
 class Pizza
 {
 public:
@@ -29,3 +30,5 @@ class VeggiePizza : public Pizza
 public:
     std::string type() const override { return "Veggie pizza"; }
 };
+
+} // namespace fact
