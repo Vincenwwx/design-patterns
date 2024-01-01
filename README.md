@@ -1,3 +1,7 @@
-# design-patterns
+# Learn Design Patterns
 
-This project provides tutorials on different software design patterns in C++.
+## Introduction
+This project provides tutorials and C++ code implementation for different software design patterns.
+
+## Usage
+Switch to corresponding design pattern branch of interest.
