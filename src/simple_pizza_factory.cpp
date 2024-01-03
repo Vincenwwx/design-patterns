@@ -2,7 +2,8 @@
 
 #include "simple_pizza_factory.h"
 
-namespace fact {
+namespace fact::simple
+{
 std::unique_ptr<Pizza> SimplePizzaFactory::createPizza(std::string_view type) {
     std::unique_ptr<Pizza> pizza;
     if(type == "cheese")
@@ -16,4 +17,4 @@ std::unique_ptr<Pizza> SimplePizzaFactory::createPizza(std::string_view type) {
     return pizza;    
 }
 
-} // namespace fact
+} // namespace fact::simple
