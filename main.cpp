@@ -4,13 +4,11 @@
 #include <iostream>
 
 int main() {
-    const auto pizza_factory = std::make_unique<fact::SimplePizzaFactory>();
     std::array<std::string, 5> PIZZA_TYPES{"cheese", "pepperoni", "veggie", "hawaii", ""};
-
     std::unique_ptr<fact::Pizza> pizza;
     bool pass{true};
     for(const auto &pizza_type : PIZZA_TYPES) {
-        pizza = pizza_factory->createPizza(pizza_type);
+        pizza = fact::SimplePizzaFactory::createPizza(pizza_type);
         if(pizza == nullptr) {
             if(pizza_type != "") {
                 std::cerr << "Failed create NULL pizza" << '\n';
