@@ -27,7 +27,7 @@ protected:
      * 
      * @note The is the factory method of our interest.
      */
-    virtual std::unique_ptr<Pizza> createPizza(std::string_view type) const = 0;
+    virtual std::unique_ptr<Pizza> createPizza(std::string_view type, bool verbose) const = 0;
 };
 
 /**
@@ -36,7 +36,7 @@ protected:
 class NewYorkStylePizzaStore : public PizzaStore
 {
 protected:
-    std::unique_ptr<Pizza> createPizza(std::string_view type) const override;
+    std::unique_ptr<Pizza> createPizza(std::string_view type, bool verbose=false) const override;
 };
 
 /**
@@ -45,7 +45,7 @@ protected:
 class ChicagoStylePizzaStore : public PizzaStore
 {
 protected:
-    std::unique_ptr<Pizza> createPizza(std::string_view type) const override;
+    std::unique_ptr<Pizza> createPizza(std::string_view type, bool verbose=false) const override;
 };
 
 } /// namespace fact::method
