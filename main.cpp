@@ -23,7 +23,7 @@ void showcaseSimpleFactoryPattern(const std::vector<std::string> &types) {
     }
 
     if(pass)
-        std::cout << "All tests of simple factory pattern passed." << std::endl;
+        std::cout << "[PASS] simple factory pattern\n" << std::endl;
 }
 
 void showcaseFactoryMethodPattern(const std::vector<std::string> &types) {
@@ -39,7 +39,17 @@ void showcaseFactoryMethodPattern(const std::vector<std::string> &types) {
     }
 
     if(pass)
-        std::cout << "All tests of factory method pattern passed." << std::endl;
+        std::cout << "[PASS] factory method pattern\n" << std::endl;
+}
+
+void showcaseAbstractFactoryPattern() {
+    auto new_york_pizza_store = std::make_unique<fact::abs::NewYorkStylePizzaStore>();
+    auto new_york_cheese_pizza = new_york_pizza_store->orderPizza("cheese");
+    auto new_york_pepperoni_pizza = new_york_pizza_store->orderPizza("pepperoni");
+
+    auto chicago_pizza_store = std::make_unique<fact::abs::ChicagoStylePizzaStore>();
+    auto chicago_cheese_pizza = chicago_pizza_store->orderPizza("cheese");
+    auto chicago_pepperoni_pizza = chicago_pizza_store->orderPizza("pepperoni");
 }
 
 int main() {
@@ -48,6 +58,8 @@ int main() {
 
     PIZZA_TYPES = std::vector<std::string>{"cheese", "pepperoni"};
     showcaseFactoryMethodPattern(PIZZA_TYPES);
+
+    showcaseAbstractFactoryPattern();
 
     return 0;
 }
