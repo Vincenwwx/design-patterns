@@ -9,4 +9,7 @@ With simple factory pattern, we simply transform or abstract the object creation
 To use the factory pattern, we create an interface in the base producer or object creator class. All derived producer classes must implement this interface by specfying the concrete products.
 
 ## Abstract Factroy Pattern
-Compared with the factory method pattern, it is more efficient to create a new serie of pizza with abstract factory. For example, we now want to create a "Berlin-style" pizza store with cheese or pepperoni pizza of corresponding favor, we just need to a new `BerlinPizzaIngredientFactory` along with a `BerlinPizzaStore`, while in terms of factory method, we need to define a new store along with 2 new pizza classes, namely `BerlinStyleCheesePizza`, `BerlinStylePepperoniPizza` and `BerlinStyleVeggiePizza`.
+Compared with the previous factory method pattern, this pattern abstract the products to a higher level.
+![Abstract Factory Diagram](https://github.com/Vincenwwx/design-patterns/assets/49132368/54ef7024-4852-41b6-ab22-c2a8a270e125)
+
+In our case, it is more efficient to create a new serie of pizza with abstract factory. For example, we now want to create a "Berlin-style" pizza store with cheese or pepperoni pizza of corresponding favor, we just need to a new `BerlinPizzaIngredientFactory` along with a `BerlinPizzaStore`, while in terms of factory method, we need to define a new store along with 2 new pizza classes, namely `BerlinStyleCheesePizza`, `BerlinStylePepperoniPizza` and `BerlinStyleVeggiePizza`.
