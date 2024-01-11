@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <string_view>
 
 namespace iter
 {
@@ -8,7 +9,7 @@ class MenuItem
 {
 public:
     MenuItem(
-        const std::string &name, const std::string &description, bool is_vegetarian, double price
+        std::string_view name, const std::string_view description, bool is_vegetarian, double price
     ) : 
         name_(name), description_(description), is_vegetarian_(is_vegetarian), price_(price)
     {
