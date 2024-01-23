@@ -1,12 +1,16 @@
+project = IteratorPattern
+
 create:
-	cmake -B build
+	cmake -B build -DPROJECT_NAME=$(project)
 
-build: create
+run:
+	@./build/$(project)
+
+all: create
 	cmake --build build
-
-test:
-	./build/IteratorPattern
 
 clean:
 	@echo "Clean up"
 	@rm -rf build
+
+.PHONY: create, check, all, clean
