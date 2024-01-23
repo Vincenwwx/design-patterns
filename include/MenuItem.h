@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include <string_view>
 
 namespace iter
@@ -15,14 +14,14 @@ public:
     {
     }
 
-    std::string getName() const { return name_; }
-    std::string getDescription() const { return description_; }
+    std::string_view getName() const { return name_; }
+    std::string_view getDescription() const { return description_; }
     bool isVegetarian() const { return is_vegetarian_; }
     double getPrice() const { return price_; }
 
 private:
-    std::string name_{};
-    std::string description_{};
+    std::string_view name_{};
+    std::string_view description_{};
     bool is_vegetarian_{false};
     double price_{.0};
 };
