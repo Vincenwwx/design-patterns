@@ -1,4 +1,4 @@
-project = IteratorPattern
+project = CommandPattern
 
 create:
 	cmake -B build -DPROJECT_NAME=$(project)
