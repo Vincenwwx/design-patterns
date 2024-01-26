@@ -1,10 +1,11 @@
 #pragma once
 
+#include "furnitures/Furniture.h"
 #include <cstdlib>
 
 namespace furniture
 {
-class Television
+class Television : public Furniture
 {
 public:
     bool isOn() const { return is_on_; }
@@ -20,10 +21,10 @@ public:
         }
     }
 
-    void printStatus() const
+    void printStatus() const override
     {
         std::cout << "Television\n----------\n- on: " << is_on_ << "\n- Channel: " 
-            << channel_num_ << '\n';
+            << channel_num_ << "\n\n";
     }
 
 private:

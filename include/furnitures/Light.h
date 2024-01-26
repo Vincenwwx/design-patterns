@@ -1,11 +1,12 @@
 #pragma once
 
+#include "furnitures/Furniture.h"
 #include <iostream>
 #include <format>
 
 namespace furniture
 {
-class Light
+class Light : public Furniture
 {
 public:
     Light() = default;
@@ -26,7 +27,7 @@ public:
     void printStatus() const
     {
         std::cout << "Light\n----------\n- brightness: " << brightness_ << "\n- temperature: " 
-            << temperature_ << '\n';
+            << temperature_ << "\n\n";
     }
 
 private:
