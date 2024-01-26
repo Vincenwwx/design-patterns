@@ -15,7 +15,7 @@ public:
     ControlCenter() = default;
     ~ControlCenter() = default;
 
-    void setCommand(size_t idx, std::unique_ptr<comd::Command> command)
+    void setCommand(size_t idx, std::unique_ptr<comd::Command> &&command)
     {
         commands_.at(idx) = std::move(command);
     }
