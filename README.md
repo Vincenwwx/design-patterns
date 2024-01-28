@@ -1,14 +1,13 @@
 # Command Pattern
 
 ## Introduction
-> The Command Pattern encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and
-support undoable operations.  
+> The Command Pattern encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.  
 -- _Head First Design Patterns_
 
 ## Scenario
 - A customer wants to build a smart home by controlling EVERYTHING with just a control center. 
 
-- The customer orders a control center with 6 customized options. Each option can be set to be simple operations like "turning on TV" or complex operations such as "making room comfortable".
+- The customer orders a control center with N customized options. Each option can be set to be simple operations like "turning on TV" or complex operations such as "making room comfortable".
 
 - The customer purchases a TV, a light and an air conditioner. They all provide different controlling methods.
 
@@ -46,3 +45,7 @@ Why good?
 - Now most classes are fixed, i.e., not susceptible to changes.
 
 If you are asking why, think about what changes need to be made if a new furniture air conditioner comes and the control center should add basic commands for that, such as "turn on/off air conditioner" (Hints can be found in [PR](https://github.com/Vincenwwx/design-patterns/pull/5#issuecomment-1912848322)). No changes have to be made to the existent classes.
+
+## Homework
+
+Implement a new furniture `AirConditioner` and two corresponding commands, namely `TurnOnAc()` and `TurnOffAcAfterOneHour()`, mentioned beforehand.
