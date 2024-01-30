@@ -1,4 +1,4 @@
-project = CommandPattern
+project = StrategyPattern
 
 create:
 	cmake -B build -DPROJECT_NAME=$(project)
