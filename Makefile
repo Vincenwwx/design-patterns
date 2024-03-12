@@ -1,13 +1,13 @@
-project = StrategyPattern
+project = VisitorPattern
+
+all: create
+	cmake --build build
 
 create:
 	cmake -B build -DPROJECT_NAME=$(project)
 
 run:
 	@./build/$(project)
-
-all: create
-	cmake --build build
 
 clean:
 	@echo "Clean up"
