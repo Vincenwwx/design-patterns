@@ -4,11 +4,16 @@ project(${PROJECT_NAME})
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(include)
+include_directories(
+    include/shapes
+    include/oo_impl
+)
 
-file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+file(GLOB_RECURSE SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/shapes/*.cpp
+)
 
-add_compile_options(-Wall)
+add_compile_options(-Wall -Werror)
 
 add_executable(${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Shape.h"
 
 namespace object
@@ -16,10 +18,12 @@ public:
 
     std::string_view type() const override { return "Circle"; }
 
+    void accept(oo_impl::ShapeVisitor const &v) const override;
+
 private:
     float center_x_;
     float center_y_;
     float radius_;
 };
- 
-} // namespace object
+
+}  // namespace object
