@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Circle.h"
-#include "Square.h"
+#include "oo_impl/shapes/Circle.h"
+#include "oo_impl/shapes/Square.h"
 
 namespace oo_impl
 {

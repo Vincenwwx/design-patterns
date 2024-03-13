@@ -1,6 +1,6 @@
-#include "Circle.h"
-#include "Draw.h"
-#include "Square.h"
+#include "oo_impl/Draw.h"
+#include "oo_impl/shapes/Circle.h"
+#include "oo_impl/shapes/Square.h"
 
 #include <vector>
 

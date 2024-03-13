@@ -1,5 +1,5 @@
-#include "Square.h"
-#include "ShapeVisitor.h"
+#include "oo_impl/shapes/Square.h"
+#include "oo_impl/ShapeVisitor.h"
 
 namespace oo_impl
 {
