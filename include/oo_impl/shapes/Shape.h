@@ -5,10 +5,7 @@
 namespace oo_impl
 {
 class ShapeVisitor;
-}  // namespace oo_impl
 
-namespace object
-{
 class Shape
 {
 public:
@@ -19,4 +16,4 @@ public:
     virtual void accept(oo_impl::ShapeVisitor const &v) const = 0;
 };
 
-}  // namespace object
+}  // namespace oo_impl

@@ -10,7 +10,7 @@ class ShapeVisitor
 public:
     virtual ~ShapeVisitor() = default;
 
-    virtual void visit(object::Circle const &circle) const = 0;
-    virtual void visit(object::Square const &square) const = 0;
+    virtual void visit(Circle const &circle) const = 0;
+    virtual void visit(Square const &square) const = 0;
 };
 }  // namespace oo_impl

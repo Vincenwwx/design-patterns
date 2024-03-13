@@ -2,7 +2,7 @@
 
 #include "Shape.h"
 
-namespace object
+namespace oo_impl
 {
 class Circle : public Shape
 {
@@ -18,7 +18,7 @@ public:
 
     std::string_view type() const override { return "Circle"; }
 
-    void accept(oo_impl::ShapeVisitor const &v) const override;
+    void accept(ShapeVisitor const &v) const override;
 
 private:
     float center_x_;
@@ -26,4 +26,4 @@ private:
     float radius_;
 };
 
-}  // namespace object
+}  // namespace oo_impl

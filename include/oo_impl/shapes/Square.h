@@ -2,7 +2,7 @@
 
 #include "Shape.h"
 
-namespace object
+namespace oo_impl
 {
 class Square : public Shape
 {
@@ -28,4 +28,4 @@ private:
     float height_;
 };
 
-}  // namespace object
+}  // namespace oo_impl
