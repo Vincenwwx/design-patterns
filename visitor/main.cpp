@@ -1,6 +1,6 @@
-#include "oo_impl/Draw.h"
-#include "oo_impl/shapes/Circle.h"
-#include "oo_impl/shapes/Square.h"
+#include "inh_impl/Draw.h"
+#include "inh_impl/shapes/Circle.h"
+#include "inh_impl/shapes/Square.h"
 #include "var_impl/shapes/Shape.h"
 #include "var_impl/util.h"
 
@@ -8,7 +8,7 @@
 
 void showImplementationWithInheritance()
 {
-    using namespace oo_impl;
+    using namespace inh_impl;
     std::vector<std::unique_ptr<Shape>> shapes;
     shapes.emplace_back(new Circle{1, 1, 2});
     shapes.emplace_back(new Circle{1, 2, 2});

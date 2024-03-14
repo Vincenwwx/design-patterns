@@ -2,7 +2,7 @@
 
 #include "Shape.h"
 
-namespace oo_impl
+namespace inh_impl
 {
 class Square : public Shape
 {
@@ -19,7 +19,7 @@ public:
 
     std::string_view type() const override { return "Square"; }
 
-    void accept(oo_impl::ShapeVisitor const &v) const override;
+    void accept(inh_impl::ShapeVisitor const &v) const override;
 
 private:
     float bottom_left_x_;
@@ -28,4 +28,4 @@ private:
     float height_;
 };
 
-}  // namespace oo_impl
+}  // namespace inh_impl

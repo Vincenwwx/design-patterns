@@ -2,7 +2,7 @@
 
 #include "Shape.h"
 
-namespace oo_impl
+namespace inh_impl
 {
 class Circle : public Shape
 {
@@ -26,4 +26,4 @@ private:
     float radius_;
 };
 
-}  // namespace oo_impl
+}  // namespace inh_impl

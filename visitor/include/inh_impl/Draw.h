@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-namespace oo_impl
+namespace inh_impl
 {
 class Draw : public ShapeVisitor
 {
@@ -14,4 +14,4 @@ public:
     void visit(Square const &square) const override { std::cout << "Draw square" << std::endl; }
 };
 
-}  // namespace oo_impl
+}  // namespace inh_impl
