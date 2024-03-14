@@ -13,6 +13,15 @@
                 "isDefault": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "make clean",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "clean"
+            ],
+            "problemMatcher": []
         }
     ]
 }
