@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
 #include "pizza_ingredient.h"
 #include <string>
@@ -61,4 +61,4 @@ public:
     }
 };
 
-} // namespace fact
+}  // namespace fact

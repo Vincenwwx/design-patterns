@@ -4,17 +4,18 @@
 
 namespace fact::simple
 {
-std::unique_ptr<Pizza> SimplePizzaFactory::createPizza(std::string_view type) {
+std::unique_ptr<Pizza> SimplePizzaFactory::createPizza(std::string_view type)
+{
     std::unique_ptr<Pizza> pizza;
-    if(type == "cheese")
+    if (type == "cheese")
         pizza.reset(new CheesePizza{});
-    else if(type == "pepperoni")
+    else if (type == "pepperoni")
         pizza.reset(new PepperoniPizza{});
-    else if(type == "veggie")
+    else if (type == "veggie")
         pizza.reset(new VeggiePizza{});
-    else if(type == "hawaii")
+    else if (type == "hawaii")
         pizza.reset(new HawaiiPizza{});
-    return pizza;    
+    return pizza;
 }
 
-} // namespace fact::simple
+}  // namespace fact::simple

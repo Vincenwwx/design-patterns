@@ -2,8 +2,8 @@
 
 #include "pizza.h"
 
-#include <memory>
 #include <string_view>
+#include <memory>
 
 namespace fact::simple
 {
@@ -18,4 +18,4 @@ public:
     static std::unique_ptr<Pizza> createPizza(std::string_view type);
 };
 
-} // namespace fact::simple
+}  // namespace fact::simple

@@ -40,7 +40,7 @@ protected:
 class NewYorkStylePizzaStore : public PizzaStore
 {
 protected:
-    std::unique_ptr<Pizza> createPizza(std::string_view type, bool verbose=false) const override;
+    std::unique_ptr<Pizza> createPizza(std::string_view type, bool verbose = false) const override;
 };
 
 /**
@@ -49,10 +49,10 @@ protected:
 class ChicagoStylePizzaStore : public PizzaStore
 {
 protected:
-    std::unique_ptr<Pizza> createPizza(std::string_view type, bool verbose=false) const override;
+    std::unique_ptr<Pizza> createPizza(std::string_view type, bool verbose = false) const override;
 };
 
-} // namespace fact::method
+}  // namespace method
 
 namespace abs
 {
@@ -91,6 +91,6 @@ private:
     }
 };
 
-} // namespace fact::abs
+}  // namespace abs
 
-} // namespace fact
+}  // namespace fact

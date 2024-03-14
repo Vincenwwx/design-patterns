@@ -12,12 +12,10 @@ public:
 };
 
 class ThinCrustDough : public Dough
-{
-};
+{};
 
 class ThickCrustDough : public Dough
-{
-};
+{};
 
 //----------------
 // Sauce
@@ -29,12 +27,10 @@ public:
 };
 
 class MarinaraSauce : public Sauce
-{
-};
+{};
 
 class PlumTomatoSauce : public Sauce
-{
-};
+{};
 
 //----------------
 // Cheese
@@ -46,11 +42,9 @@ public:
 };
 
 class ReggianoCheese : public Cheese
-{
-};
+{};
 
 class MozarellaCheese : public Cheese
-{
-};
+{};
 
-} // namespace fact::ingredient
+}  // namespace fact::ingredient

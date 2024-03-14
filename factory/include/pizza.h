@@ -1,23 +1,42 @@
 #pragma once
 
 #include "pizza_ingredient_factory.h"
-#include <string>
 #include <iostream>
+#include <string>
 
-namespace fact {
+namespace fact
+{
 class Pizza
 {
 public:
-    Pizza(bool verbose = false) : verbose_(verbose)
-    {
-    }
-    virtual ~Pizza() {};
+    Pizza(bool verbose = false) : verbose_(verbose) {}
+    virtual ~Pizza(){};
 
     virtual std::string type() const = 0;
-    void prepare() const { if(verbose_) std::cout << "Prepare " << type() << std::endl; }
-    void bake() const { if(verbose_) std::cout << "Bake " << type() << std::endl; }
-    void cut() const { if(verbose_) std::cout << "Cut " << type() << std::endl; }
-    void pack() const { if(verbose_) std::cout << "Pack " << type() << std::endl; }
+
+    void prepare() const
+    {
+        if (verbose_)
+            std::cout << "Prepare " << type() << std::endl;
+    }
+
+    void bake() const
+    {
+        if (verbose_)
+            std::cout << "Bake " << type() << std::endl;
+    }
+
+    void cut() const
+    {
+        if (verbose_)
+            std::cout << "Cut " << type() << std::endl;
+    }
+
+    void pack() const
+    {
+        if (verbose_)
+            std::cout << "Pack " << type() << std::endl;
+    }
 
 private:
     bool verbose_;
@@ -49,16 +68,14 @@ public:
     std::string type() const override { return "veggie"; }
 };
 
-} // namespace fact::simple
+}  // namespace simple
 
 namespace method
 {
 class NewYorkStyleCheesePizza : public Pizza
 {
 public:
-    NewYorkStyleCheesePizza(bool verbose = false) : Pizza(verbose)
-    {
-    }
+    NewYorkStyleCheesePizza(bool verbose = false) : Pizza(verbose) {}
 
     std::string type() const override { return "New York style cheese pizza"; };
 };
@@ -66,9 +83,7 @@ public:
 class NewYorkStylePepperoniPizza : public Pizza
 {
 public:
-    NewYorkStylePepperoniPizza(bool verbose = false) : Pizza(verbose)
-    {
-    }
+    NewYorkStylePepperoniPizza(bool verbose = false) : Pizza(verbose) {}
 
     std::string type() const override { return "New York style pepperoni pizza"; }
 };
@@ -76,9 +91,7 @@ public:
 class ChicagoStyleCheesePizza : public Pizza
 {
 public:
-    ChicagoStyleCheesePizza(bool verbose = false) : Pizza(verbose)
-    {
-    }
+    ChicagoStyleCheesePizza(bool verbose = false) : Pizza(verbose) {}
 
     std::string type() const override { return "Chicago stype cheese pizza"; };
 };
@@ -86,13 +99,11 @@ public:
 class ChicagoStylePepperoniPizza : public Pizza
 {
 public:
-    ChicagoStylePepperoniPizza(bool verbose = false) : Pizza(verbose)
-    {
-    }
+    ChicagoStylePepperoniPizza(bool verbose = false) : Pizza(verbose) {}
 
     std::string type() const override { return "Chicago stype pepperoni pizza"; }
 };
-} // namespace fact::method
+}  // namespace method
 
 namespace abs
 {
@@ -104,7 +115,7 @@ namespace abs
 class Pizza
 {
 public:
-    Pizza(std::unique_ptr<PizzaIngredientFactory> &&factory, bool verbose=false) : 
+    Pizza(std::unique_ptr<PizzaIngredientFactory> &&factory, bool verbose = false) :
         style_(factory->style()),
         dough_(factory->createDough()),
         sauce_(factory->createSauce()),
@@ -115,13 +126,26 @@ public:
     virtual ~Pizza() = default;
 
     virtual std::string type() const = 0;
-    void prepare() const {
-        if(verbose_)
+    void prepare() const
+    {
+        if (verbose_)
             std::cout << "Prepare " << style_ << "-style " << type() << " pizza" << std::endl;
     }
-    void bake() const { if(verbose_) std::cout << "Bake " << style_ << "-style " << type() << std::endl; }
-    void cut() const { if(verbose_) std::cout << "Cut " << style_ << "-style " << type() << std::endl; }
-    void pack() const { if(verbose_) std::cout << "Pack " << style_ << "-style " << type() << std::endl; }
+    void bake() const
+    {
+        if (verbose_)
+            std::cout << "Bake " << style_ << "-style " << type() << std::endl;
+    }
+    void cut() const
+    {
+        if (verbose_)
+            std::cout << "Cut " << style_ << "-style " << type() << std::endl;
+    }
+    void pack() const
+    {
+        if (verbose_)
+            std::cout << "Pack " << style_ << "-style " << type() << std::endl;
+    }
 
 private:
     std::string style_;
@@ -135,8 +159,8 @@ private:
 class CheesePizza : public Pizza
 {
 public:
-    CheesePizza(std::unique_ptr<PizzaIngredientFactory> &&factory, bool verbose=false)
-        : Pizza(std::move(factory), verbose)
+    CheesePizza(std::unique_ptr<PizzaIngredientFactory> &&factory, bool verbose = false) :
+        Pizza(std::move(factory), verbose)
     {
     }
 
@@ -146,14 +170,14 @@ public:
 class PepperoniPizza : public Pizza
 {
 public:
-    PepperoniPizza(std::unique_ptr<PizzaIngredientFactory> &&factory, bool verbose=false)
-        : Pizza(std::move(factory), verbose)
+    PepperoniPizza(std::unique_ptr<PizzaIngredientFactory> &&factory, bool verbose = false) :
+        Pizza(std::move(factory), verbose)
     {
     }
 
     std::string type() const override { return "pepperoni pizza"; }
 };
 
-} // namespace fact::abs
+}  // namespace abs
 
-} // namespace fact
+}  // namespace fact
