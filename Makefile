@@ -2,7 +2,7 @@ all: create
 	cmake --build build
 
 create:
-	cmake -D -B build
+	cmake -B build
 
 clean:
 	@echo "Clean up..."
