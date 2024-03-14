@@ -5,5 +5,7 @@
 >
 > -- Erich Gamma et al., _Design Patterns: Elements of Reusable Object-Oriented Software_.
 
-## Scenario
-Fixed types, need to add operations (on those types) flexibly
+Visitor pattern is suitable for those scenarios where the types of classes are relatively fixed, new operations (on those types) are required to be created.
+
+## Implementation
+The visitor pattern can be implemented with either the helf of inheritance, or `std::variant` (since C++17).
