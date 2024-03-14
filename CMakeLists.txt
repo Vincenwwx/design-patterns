@@ -7,3 +7,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_compile_options(-Wall -Werror)
 
 # Add subdirectories
+add_subdirectory(visitor)
