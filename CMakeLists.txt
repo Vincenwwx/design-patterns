@@ -9,3 +9,4 @@ add_compile_options(-Wall -Werror)
 # Add subdirectories
 add_subdirectory(visitor)
 add_subdirectory(factory)
+add_subdirectory(CRTP)
