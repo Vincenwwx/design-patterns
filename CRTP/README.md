@@ -14,18 +14,21 @@ class Derived2 : public Base<Derived2> {};
 ...
 ```
 ---
-<h2>Pros & Cons</h2>
-This approach is beneficial for establishing static polymorphic behaviors without relying on virtual functions. The benefits of this pattern encompass:
+<h2>Analysis</h2>
 
-- Lower memory overhead: There's no need for additional space for a virtual pointer and table. This is particularly crucial in some use cases like embedded systems;
+This approach is beneficial for establishing static polymorphic behaviors without relying on virtual functions.
 
-- Faster function calls: Functions are dispatched directly, bypassing the virtual table, allowing the compiler greater opportunities for optimizations like inlining.
+<h3>Pros</h3>
 
-However, this pattern also has its drawbacks:
+- __Lower memory overhead__: There's no need for additional space for a virtual pointer and table. This is particularly crucial in some use cases like embedded systems;
+
+- __Faster function calls__: Functions are dispatched directly, bypassing the virtual table, allowing the compiler greater opportunities for optimizations like inlining.
+
+<h3>Cons</h3>
 
 - Less straightforward to understand;
 
-- Limited flexibility: Derived classes cannot be addressed through a pointer or reference to base classes.
+- __Limited flexibility__: Derived classes cannot be addressed through a pointer or reference to base classes.
 
 ```cpp
 // Operations similiar like this are no more possible.
@@ -39,7 +42,7 @@ for(auto const &obj : objects) { ... }
 
 <h3>Q1: Why the "derived" class need to inherit from the base class?</h3>
 
-To maintain some low level of the polymorhism. (See parameter of the function `printSize` in _main.cpp_)
+To maintain some low level of the polymorhism. (See implementation of the function `printSize()` in _main.cpp_)
 
 <h3>Q2: Why use a protected destructor for the base class?</h3>
 
