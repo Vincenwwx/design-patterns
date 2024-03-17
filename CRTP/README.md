@@ -33,7 +33,7 @@ This approach is beneficial for establishing static polymorphic behaviors withou
 - __Limited flexibility__: Derived classes cannot be addressed through a pointer or reference to base classes.
 
 ```cpp
-// Operations similiar like this are no more possible.
+// Operations like this are no more allowed.
 std::vector<std::unique_ptr<Base>> objects;
 for(auto const &obj : objects) { ... }
 ```
