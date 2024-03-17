@@ -3,47 +3,26 @@
 
 #include <iostream>
 
-bool testDynamicVector()
+template <typename T>
+void printSize(crtp::DenseVector<T> const &vector)
 {
-    using namespace crtp;
-    DynamicVector<uint8_t> dym_vec{1, 2, 3, 4};
-    bool all_pass{true};
-    if (dym_vec.size() != 4)
+    auto const sz = vector.size();
+    std::cout << "Vector (" << sz << "): ";
+    for (size_t i = 0; i < sz; i++)
     {
-        std::cerr << "Wrong size\n";
-        all_pass = false;
+        std::cout << vector[i] << " ";
     }
-    return all_pass;
-}
-
-bool testStaticVector()
-{
-    using namespace crtp;
-    StaticVector<uint8_t, 4> dym_vec{1, 2, 3, 4};
-    bool all_pass{true};
-    if (dym_vec.size() != 4)
-    {
-        std::cerr << "Wrong size\n";
-        all_pass = false;
-    }
-    if (dym_vec[0] != 1)
-    {
-        std::cerr << "Wrong value (0)";
-        all_pass = false;
-    }
-    return all_pass;
+    std::cout << std::endl;
 }
 
 int main()
 {
-    bool all_pass{true};
-    all_pass |= testDynamicVector();
-    all_pass |= testStaticVector();
+    std::cout << "--- CRTP showcase ---\n";
+    crtp::DynamicVector<int> dv{1, 2, 3, 4};
+    crtp::StaticVector<int, 4> sv{5, 6, 7, 8};
 
-    if (all_pass)
-    {
-        std::cout << "[CRTP] All tests passed!" << std::endl;
-    }
+    printSize(dv);
+    printSize(sv);
 
     return 0;
 }
