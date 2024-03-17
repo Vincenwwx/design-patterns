@@ -13,15 +13,17 @@ class Derived2 : public Base<Derived2> {};
 ```
 ---
 ## Pros & Cons
-This is useful for creating (static) polymorphic behaviors without using virtual functions. Therefore, the advantages of this pattern include:
-- Reduced memory cost as no extra space needed for virtual pointer and table, which can be critical for small classes;
+This approach is beneficial for establishing static polymorphic behaviors without relying on virtual functions. The benefits of this pattern encompass:
 
-- Reduced time cost for function call: function calla are dispatched directly (not via the vtable) and the compiler has more chance for optimization such as inlining.
+- Lower memory overhead: There's no need for additional space for a virtual pointer and table. This is particularly crucial in some use cases like embedded systems;
 
-This pattern has centainly disadvantages:
+- Faster function calls: Functions are dispatched directly, bypassing the virtual table, allowing the compiler greater opportunities for optimizations like inlining.
 
-- Less intuitive;
-- Less flexibility: Derived classes are not addressable via pionter or reference to base classes;
+However, this pattern also has its drawbacks:
+
+- Less straightforward to understand;
+
+- Limited flexibility: Derived classes cannot be addressed through a pointer or reference to base classes.
 
 ```cpp
 // Operations similiar like this are no more possible.
