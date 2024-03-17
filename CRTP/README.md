@@ -7,7 +7,9 @@ CRTP is a pattern where a class uses itself as a template parameter.
 
 ```cpp
 template<class Derived>
-class Base {};
+class Base
+{
+};
  
 class Derived1 : public Base<Derived1> {};
 class Derived2 : public Base<Derived2> {};
