@@ -1,8 +1,10 @@
 # Curiously Recurring Template Pattern (CRTP)
 
 ---
-## Introduction
+<h2>Introduction</h2>
+
 CRTP is a pattern where a class uses itself as a template parameter.
+
 ```cpp
 template<class Derived>
 class Base {};
@@ -12,7 +14,7 @@ class Derived2 : public Base<Derived2> {};
 ...
 ```
 ---
-## Pros & Cons
+<h2>Pros & Cons</h2>
 This approach is beneficial for establishing static polymorphic behaviors without relying on virtual functions. The benefits of this pattern encompass:
 
 - Lower memory overhead: There's no need for additional space for a virtual pointer and table. This is particularly crucial in some use cases like embedded systems;
@@ -33,16 +35,14 @@ for(auto const &obj : objects) { ... }
 
 ---
 
-## Q&A
+<h2>Q&A</h2>
 
-### Q1: Why the "derived" class need to inherit from the base class?
+<h3>Q1: Why the "derived" class need to inherit from the base class?</h3>
 
-<u>Ans</u>:
 To maintain some low level of the polymorhism. (See parameter of the function `printSize` in _main.cpp_)
 
-### Q2: Why use a protected destructor for the base class?
+<h3>Q2: Why use a protected destructor for the base class?</h3>
 
-<u>Ans</u>: 
 To begin with, we need to avoid using virtual functions, such as the virtual destructor, in CRTP. Also, the base class should mainly serve as a __template__, and resource management should be handled in the derived classes. We should prevent situations where the object is destroyed through the destructor of the base class by the caller.
 
 ```cpp
