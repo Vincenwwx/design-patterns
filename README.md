@@ -1,7 +1,7 @@
-# Design Pattern in Cpp
+# Design Patterns in C++
 
 ## Overview
-This repo provides C++ samples for the most-often seen software design patterns.
+This repository provides C++ samples for the most-often seen software design patterns like the factory pattern, strategy pattern and etc.
 
 | Pattern  | Suitable | Not Suitable |
 | ------------- | ------------- | -- |
