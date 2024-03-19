@@ -3,6 +3,13 @@
 ## Overview
 This repo provides C++ samples for the most-often seen software design patterns.
 
+| Pattern  | Suitable | Not Suitable |
+| ------------- | ------------- | -- |
+| Factory  | TODO  | TODO |
+| Strategy  | TODO  | TODO |
+| Visitor  | TODO  | TODO |
+| CRTP  | TODO  | TODO |
+
 ## Usage
 Each design pattern is implemented in its separate directory. To complile the code, use command:
 ```
